@@ -13,7 +13,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://dahil.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
@@ -183,6 +183,55 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2018/01/05/fe1002/">
+                            css3制作文字垂直居中，动画省略号
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-01-05T14:15:19+08:00">
+	
+		    1月 05, 2018
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/css/">css</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">	<span class="selector-class">.oDiv</span> &#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">		<span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">		<span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#ff5500</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.verticalcenter</span> &#123;</span><br><span class="line">		<span class="attribute">position</span>: relative;</span><br><span class="line">		<span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">		<span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">		<span class="attribute">-o-transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">		<span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-class">.loading</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">		<span class="attribute">overflow</span>: hidden;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">vertical-align</span>: bottom;</span><br><span class="line">		<span class="attribute">animation</span>: ellipsis <span class="number">2s</span> infinite;</span><br><span class="line">		<span class="attribute">content</span>: <span class="string">"\2026"</span>;</span><br><span class="line">		<span class="comment">/* ascii code for the ellipsis character */</span></span><br><span class="line">	&#125;</span><br><span class="line">	@<span class="keyword">keyframes</span> ellipsis &#123;</span><br><span class="line">		<span class="selector-tag">from</span> &#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-tag">to</span> &#123;</span><br><span class="line">			<span class="attribute">width</span>: <span class="number">15px</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class="oDiv"&gt;</span><br><span class="line">	&lt;div class="verticalcenter"&gt;垂直对齐垂直对齐垂直对齐垂直对齐垂直对齐垂直对齐&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class="loading"&gt;垂直对齐垂直对齐垂直对齐垂直对齐垂直对齐垂直对齐&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/01/05/fe1002/#post-footer" class="postShorten-excerpt_link link">
+                                评论和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/12/29/fe1001/">
                             Sublime Text 3插件推荐CSS Compact Expand CSS属性展开收缩
                         </a>
@@ -287,7 +336,7 @@
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2017 John Doe. All Rights Reserved.
+        Copyrights &copy; 2018 John Doe. All Rights Reserved.
     </span>
 </footer>
 
