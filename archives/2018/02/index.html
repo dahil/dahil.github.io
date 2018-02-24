@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hexo">
-    <title>分类: javascript - Hexo</title>
+    <title>归档: 2018/2 - Hexo</title>
     <meta name="author" content="John Doe">
     
     
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://dahil.github.io/categories/javascript/index.html">
+<meta property="og:url" content="https://dahil.github.io/archives/2018/02/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
@@ -216,64 +216,6 @@
                     
                         <p>
                             <a href="/2018/02/24/文本框字数限制/#post-footer" class="postShorten-excerpt_link link">
-                                评论和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2018/01/24/获取location上的参数/">
-                            获取location参数(附加获取cookie)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-01-24T17:53:36+08:00">
-	
-		    1月 24, 2018
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/javascript/">javascript</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="获取location"><a href="#获取location" class="headerlink" title="获取location"></a>获取location</h2><p>获取location的方法网上有很多种了，之前也自己写过很多种，这些方法各有利弊吧，这里我自己整理一个自己最常用的。<br>此方法主要实现了以下两个分支功能：</p>
-<ul>
-<li>实时获取</li>
-<li>传入一个字符串参数的时候，返回以此字符串做为键名的值</li>
-<li>不传入任何参数的时候，返回一个json对象，包含所有search参数的键值对</li>
-<li>既然是location相关的东西，就把这个方法直接做为一个location的属性方法吧</li>
-</ul>
-<p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location.query = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> query;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>] === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?&amp;]'</span> + <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="string">'=([^&amp;]+)'</span>,<span class="string">''</span>);</span><br><span class="line">        query = reg.test(location.search) ? <span class="built_in">RegExp</span>.$<span class="number">1</span> : <span class="string">''</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        query = &#123;&#125;;</span><br><span class="line">        location.search.replace(<span class="string">'?'</span>,<span class="string">''</span>).split(<span class="string">'&amp;'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">            item = item.split(<span class="string">'='</span>);</span><br><span class="line">            item[<span class="number">0</span>] &amp;&amp; (query[item[<span class="number">0</span>]] = item[<span class="number">1</span>] || <span class="string">''</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> query;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="获取cookie"><a href="#获取cookie" class="headerlink" title="获取cookie"></a>获取cookie</h2><p>获取cookie的方法其实跟获取location本质上是一样的，就是操作字符串呗，我这里就不过多描述了，把上面稍微改动一下就出来了。<br>另外document.cookie本身是个字符串类型的值，所以我们就没办法把这个方法跟这个东西关联起来了，就直接定义一个全局方法吧。</p>
-<p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> query;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>] === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\b'</span> + <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="string">'=([^;]+)'</span>,<span class="string">''</span>);</span><br><span class="line">        query = reg.test(<span class="built_in">document</span>.cookie) ? <span class="built_in">RegExp</span>.$<span class="number">1</span> : <span class="string">''</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        query = &#123;&#125;;</span><br><span class="line">        <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">            item = item.trim().split(<span class="string">'='</span>);</span><br><span class="line">            item[<span class="number">0</span>] &amp;&amp; (query[item[<span class="number">0</span>]] = item[<span class="number">1</span>] || <span class="string">''</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> query;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2018/01/24/获取location上的参数/#post-footer" class="postShorten-excerpt_link link">
                                 评论和共享
                             </a>
                         </p>

@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hexo">
+    <title>文本框限制字数(依赖于JQ) - Hexo</title>
+    <meta name="author" content="John Doe">
+    
+    
+    
+    <meta name="description" content="以下是源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950var num = 20;//要限制的字数$(&apos;input&apos;).keyup(function () &amp;#123;    $(this).siblings(&apos;span&apos;).html(&apos;0/&apos;+num+&apos;&apos;);">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="文本框限制字数(依赖于JQ)">
+<meta property="og:url" content="https://dahil.github.io/2018/02/24/文本框字数限制/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以下是源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950var num = 20;//要限制的字数$(&apos;input&apos;).keyup(function () &amp;#123;    $(this).siblings(&apos;span&apos;).html(&apos;0/&apos;+num+&apos;&apos;);">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-02-24T10:01:26.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文本框限制字数(依赖于JQ)">
+<meta name="twitter:description" content="以下是源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950var num = 20;//要限制的字数$(&apos;input&apos;).keyup(function () &amp;#123;    $(this).siblings(&apos;span&apos;).html(&apos;0/&apos;+num+&apos;&apos;);">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-pz4cc6y13wt2trzqa8l3n9v0yykr0sstdaheem7qj628nhjmhp9pfawvqawz.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">Hexo</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首页"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首页</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/categories"
+                            
+                            title="分类"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分类</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/tags"
+                            
+                            title="标签"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">标签</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/archives"
+                            
+                            title="归档"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">归档</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                            title="搜索"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">搜索</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="关于"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">关于</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            文本框限制字数(依赖于JQ)
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2018-02-24T17:56:35+08:00">
+	
+		    2月 24, 2018
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/javascript/">javascript</a>
+
+
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">20</span>;<span class="comment">//要限制的字数</span></span><br><span class="line">$(<span class="string">'input'</span>).keyup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">'0/'</span>+num+<span class="string">''</span>);<span class="comment">//span 要提示文字的dom标签</span></span><br><span class="line">    <span class="keyword">var</span> val = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> length = arial_strlen(val);</span><br><span class="line">    <span class="keyword">var</span> charAtFont = <span class="built_in">Math</span>.round(length) - num;</span><br><span class="line">    $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">''</span>+<span class="built_in">Math</span>.round(length)+<span class="string">'/'</span>+num+<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">if</span> (length &gt;= num) &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">''</span>+<span class="built_in">Math</span>.round(length)+<span class="string">'/'</span>+num+<span class="string">'  &lt;font color="red"&gt;已超出'</span>+charAtFont+<span class="string">'个字&lt;/font&gt;'</span>);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countwords</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/[^\x00-\xff]/g</span>,<span class="string">"rr"</span>).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arial_strlen</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	count=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(!str) <span class="keyword">return</span> count;</span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++) &#123;</span><br><span class="line">		<span class="keyword">var</span> c = str.charCodeAt(i);</span><br><span class="line">		<span class="keyword">if</span> ((c &gt;= <span class="number">0x0001</span> &amp;&amp; c &lt;= <span class="number">0x007e</span>) || (<span class="number">0xff60</span>&lt;=c &amp;&amp; c&lt;=<span class="number">0xff9f</span>)) &#123;</span><br><span class="line">			<span class="keyword">var</span> ch = str.charAt(i);</span><br><span class="line">			<span class="keyword">if</span> (ch == <span class="string">'i'</span> || ch == <span class="string">'I'</span> || ch == <span class="string">'l'</span> || ch == <span class="string">'.'</span> || ch == <span class="string">':'</span> || ch == <span class="string">'-'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.2</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'@'</span>|| ch == <span class="string">'_'</span> || ch == <span class="string">'£¨'</span> || ch == <span class="string">'¡Á'</span> || ch == <span class="string">'£©'</span>) &#123;</span><br><span class="line">				count += <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'f'</span> || ch == <span class="string">'j'</span> || ch == <span class="string">'r'</span> || ch == <span class="string">'t'</span> || ch == <span class="string">';'</span> || ch == <span class="string">'('</span> || ch == <span class="string">')'</span> || ch == <span class="string">'*'</span> || ch == <span class="string">'!'</span> || ch == <span class="string">'\''</span> || ch == <span class="string">' '</span> || ch == <span class="string">'|'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.3</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> ((ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)) &#123;</span><br><span class="line">				count += <span class="number">0.52</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'m'</span> || ch == <span class="string">'w'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.65</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch &gt;= <span class="string">'a'</span> &amp;&amp; ch &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.5</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'W'</span>) &#123;</span><br><span class="line">				count += <span class="number">1.14</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch &gt;= <span class="string">'A'</span> &amp;&amp; ch &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.72</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				count ++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/24/获取location上的参数/" data-tooltip="获取location参数(附加获取cookie)" aria-label="下一篇: 获取location参数(附加获取cookie)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="post.share">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="post.back_to_top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 John Doe. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/24/获取location上的参数/" data-tooltip="获取location参数(附加获取cookie)" aria-label="下一篇: 获取location参数(附加获取cookie)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="post.share">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/24/文本框字数限制/" title="分享到 Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="post.back_to_top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/24/文本框字数限制/">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i><span>分享到 Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/24/文本框字数限制/">
+                    <i class="fa fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/24/文本框字数限制/">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">John Doe</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-peofhqjkzcghmndknakluequy1y6owxdwpaqyju9ntl9zxnk7rdolb3rjjoj.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

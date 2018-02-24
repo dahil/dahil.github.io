@@ -184,6 +184,55 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2018/02/24/文本框字数限制/">
+                            文本框限制字数(依赖于JQ)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-02-24T17:56:35+08:00">
+	
+		    2月 24, 2018
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/javascript/">javascript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">20</span>;<span class="comment">//要限制的字数</span></span><br><span class="line">$(<span class="string">'input'</span>).keyup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">'0/'</span>+num+<span class="string">''</span>);<span class="comment">//span 要提示文字的dom标签</span></span><br><span class="line">    <span class="keyword">var</span> val = $(<span class="keyword">this</span>).val();</span><br><span class="line">    <span class="keyword">var</span> length = arial_strlen(val);</span><br><span class="line">    <span class="keyword">var</span> charAtFont = <span class="built_in">Math</span>.round(length) - num;</span><br><span class="line">    $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">''</span>+<span class="built_in">Math</span>.round(length)+<span class="string">'/'</span>+num+<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">if</span> (length &gt;= num) &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).siblings(<span class="string">'span'</span>).html(<span class="string">''</span>+<span class="built_in">Math</span>.round(length)+<span class="string">'/'</span>+num+<span class="string">'  &lt;font color="red"&gt;已超出'</span>+charAtFont+<span class="string">'个字&lt;/font&gt;'</span>);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countwords</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/[^\x00-\xff]/g</span>,<span class="string">"rr"</span>).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arial_strlen</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	count=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(!str) <span class="keyword">return</span> count;</span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++) &#123;</span><br><span class="line">		<span class="keyword">var</span> c = str.charCodeAt(i);</span><br><span class="line">		<span class="keyword">if</span> ((c &gt;= <span class="number">0x0001</span> &amp;&amp; c &lt;= <span class="number">0x007e</span>) || (<span class="number">0xff60</span>&lt;=c &amp;&amp; c&lt;=<span class="number">0xff9f</span>)) &#123;</span><br><span class="line">			<span class="keyword">var</span> ch = str.charAt(i);</span><br><span class="line">			<span class="keyword">if</span> (ch == <span class="string">'i'</span> || ch == <span class="string">'I'</span> || ch == <span class="string">'l'</span> || ch == <span class="string">'.'</span> || ch == <span class="string">':'</span> || ch == <span class="string">'-'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.2</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'@'</span>|| ch == <span class="string">'_'</span> || ch == <span class="string">'£¨'</span> || ch == <span class="string">'¡Á'</span> || ch == <span class="string">'£©'</span>) &#123;</span><br><span class="line">				count += <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'f'</span> || ch == <span class="string">'j'</span> || ch == <span class="string">'r'</span> || ch == <span class="string">'t'</span> || ch == <span class="string">';'</span> || ch == <span class="string">'('</span> || ch == <span class="string">')'</span> || ch == <span class="string">'*'</span> || ch == <span class="string">'!'</span> || ch == <span class="string">'\''</span> || ch == <span class="string">' '</span> || ch == <span class="string">'|'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.3</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> ((ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)) &#123;</span><br><span class="line">				count += <span class="number">0.52</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'m'</span> || ch == <span class="string">'w'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.65</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch &gt;= <span class="string">'a'</span> &amp;&amp; ch &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.5</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">'W'</span>) &#123;</span><br><span class="line">				count += <span class="number">1.14</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch &gt;= <span class="string">'A'</span> &amp;&amp; ch &lt;= <span class="string">'Z'</span>) &#123;</span><br><span class="line">				count += <span class="number">0.72</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				count ++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/02/24/文本框字数限制/#post-footer" class="postShorten-excerpt_link link">
+                                评论和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2018/01/24/获取location上的参数/">
                             获取location参数(附加获取cookie)
                         </a>
