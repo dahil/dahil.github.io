@@ -6,23 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hexo">
-    <title>获取location参数(附加获取cookie) - Hexo</title>
+    <title>js短路运算符 - Hexo</title>
     <meta name="author" content="John Doe">
     
     
     
-    <meta name="description" content="获取location获取location的方法网上有很多种了，之前也自己写过很多种，这些方法各有利弊吧，这里我自己整理一个自己最常用的。此方法主要实现了以下两个分支功能：  实时获取 传入一个字符串参数的时候，返回以此字符串做为键名的值 不传入任何参数的时候，返回一个json对象，包含所有search参数的键值对 既然是location相关的东西，就把这个方法直接做为一个location的属性方法">
-<meta name="keywords" content="location.href,location.search,location参数,获取cookie,cookie,document.cookie">
+    <meta name="description" content="##  以下是源码：123456789101112131415location.query = function()&amp;#123;    var query;    if(typeof arguments[0] === &apos;string&apos;)&amp;#123;        var reg = new RegExp(&apos;[?&amp;amp;]&apos; + arguments[0] + &apos;=([^&amp;amp;]+)&apos;,&apos;&apos;);">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="获取location参数(附加获取cookie)">
-<meta property="og:url" content="https://dahil.github.io/2018/01/24/获取location上的参数/index.html">
+<meta property="og:title" content="js短路运算符">
+<meta property="og:url" content="https://dahil.github.io/2018/02/26/js短路运算符/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="获取location获取location的方法网上有很多种了，之前也自己写过很多种，这些方法各有利弊吧，这里我自己整理一个自己最常用的。此方法主要实现了以下两个分支功能：  实时获取 传入一个字符串参数的时候，返回以此字符串做为键名的值 不传入任何参数的时候，返回一个json对象，包含所有search参数的键值对 既然是location相关的东西，就把这个方法直接做为一个location的属性方法">
+<meta property="og:description" content="##  以下是源码：123456789101112131415location.query = function()&amp;#123;    var query;    if(typeof arguments[0] === &apos;string&apos;)&amp;#123;        var reg = new RegExp(&apos;[?&amp;amp;]&apos; + arguments[0] + &apos;=([^&amp;amp;]+)&apos;,&apos;&apos;);">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-02-24T09:58:40.274Z">
+<meta property="og:updated_time" content="2018-02-28T07:24:32.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取location参数(附加获取cookie)">
-<meta name="twitter:description" content="获取location获取location的方法网上有很多种了，之前也自己写过很多种，这些方法各有利弊吧，这里我自己整理一个自己最常用的。此方法主要实现了以下两个分支功能：  实时获取 传入一个字符串参数的时候，返回以此字符串做为键名的值 不传入任何参数的时候，返回一个json对象，包含所有search参数的键值对 既然是location相关的东西，就把这个方法直接做为一个location的属性方法">
+<meta name="twitter:title" content="js短路运算符">
+<meta name="twitter:description" content="##  以下是源码：123456789101112131415location.query = function()&amp;#123;    var query;    if(typeof arguments[0] === &apos;string&apos;)&amp;#123;        var reg = new RegExp(&apos;[?&amp;amp;]&apos; + arguments[0] + &apos;=([^&amp;amp;]+)&apos;,&apos;&apos;);">
     
     
         
@@ -186,14 +185,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            获取location参数(附加获取cookie)
+            js短路运算符
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2018-01-24T17:53:36+08:00">
+    <time itemprop="datePublished" datetime="2018-02-26T17:02:15+08:00">
 	
-		    1月 24, 2018
+		    2月 26, 2018
     	
     </time>
     
@@ -210,29 +209,14 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="获取location"><a href="#获取location" class="headerlink" title="获取location"></a>获取location</h2><p>获取location的方法网上有很多种了，之前也自己写过很多种，这些方法各有利弊吧，这里我自己整理一个自己最常用的。<br>此方法主要实现了以下两个分支功能：</p>
-<ul>
-<li>实时获取</li>
-<li>传入一个字符串参数的时候，返回以此字符串做为键名的值</li>
-<li>不传入任何参数的时候，返回一个json对象，包含所有search参数的键值对</li>
-<li>既然是location相关的东西，就把这个方法直接做为一个location的属性方法吧</li>
-</ul>
+            <p>## </p>
 <p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location.query = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> query;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>] === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?&amp;]'</span> + <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="string">'=([^&amp;]+)'</span>,<span class="string">''</span>);</span><br><span class="line">        query = reg.test(location.search) ? <span class="built_in">RegExp</span>.$<span class="number">1</span> : <span class="string">''</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        query = &#123;&#125;;</span><br><span class="line">        location.search.replace(<span class="string">'?'</span>,<span class="string">''</span>).split(<span class="string">'&amp;'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">            item = item.split(<span class="string">'='</span>);</span><br><span class="line">            item[<span class="number">0</span>] &amp;&amp; (query[item[<span class="number">0</span>]] = item[<span class="number">1</span>] || <span class="string">''</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> query;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="获取cookie"><a href="#获取cookie" class="headerlink" title="获取cookie"></a>获取cookie</h2><p>获取cookie的方法其实跟获取location本质上是一样的，就是操作字符串呗，我这里就不过多描述了，把上面稍微改动一下就出来了。<br>另外document.cookie本身是个字符串类型的值，所以我们就没办法把这个方法跟这个东西关联起来了，就直接定义一个全局方法吧。</p>
-<p>以下是源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> query;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>] === <span class="string">'string'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\b'</span> + <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="string">'=([^;]+)'</span>,<span class="string">''</span>);</span><br><span class="line">        query = reg.test(<span class="built_in">document</span>.cookie) ? <span class="built_in">RegExp</span>.$<span class="number">1</span> : <span class="string">''</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        query = &#123;&#125;;</span><br><span class="line">        <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">            item = item.trim().split(<span class="string">'='</span>);</span><br><span class="line">            item[<span class="number">0</span>] &amp;&amp; (query[item[<span class="number">0</span>]] = item[<span class="number">1</span>] || <span class="string">''</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> query;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             
 
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/cookie/">cookie</a> <a class="tag tag--primary tag--small t-link" href="/tags/document-cookie/">document.cookie</a> <a class="tag tag--primary tag--small t-link" href="/tags/location-href/">location.href</a> <a class="tag tag--primary tag--small t-link" href="/tags/location-search/">location.search</a> <a class="tag tag--primary tag--small t-link" href="/tags/location参数/">location参数</a> <a class="tag tag--primary tag--small t-link" href="/tags/获取cookie/">获取cookie</a>
-
-            </div>
         
         
             <div class="post-actions-wrap">
@@ -241,7 +225,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/24/文本框字数限制/" data-tooltip="文本框限制字数(依赖于JQ)" aria-label="上一篇: 文本框限制字数(依赖于JQ)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/28/js数组去重/" data-tooltip="js数组去重" aria-label="上一篇: js数组去重">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -250,7 +234,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/05/fe1002/" data-tooltip="css3制作文字垂直居中，动画省略号" aria-label="下一篇: css3制作文字垂直居中，动画省略号">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/24/文本框字数限制/" data-tooltip="文本框限制字数(依赖于JQ)" aria-label="下一篇: 文本框限制字数(依赖于JQ)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -268,7 +252,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Facebook">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -276,7 +260,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Twitter">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -284,7 +268,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Google+">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -327,7 +311,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/24/文本框字数限制/" data-tooltip="文本框限制字数(依赖于JQ)" aria-label="上一篇: 文本框限制字数(依赖于JQ)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/28/js数组去重/" data-tooltip="js数组去重" aria-label="上一篇: js数组去重">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -336,7 +320,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/05/fe1002/" data-tooltip="css3制作文字垂直居中，动画省略号" aria-label="下一篇: css3制作文字垂直居中，动画省略号">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/02/24/文本框字数限制/" data-tooltip="文本框限制字数(依赖于JQ)" aria-label="下一篇: 文本框限制字数(依赖于JQ)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -354,7 +338,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Facebook">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -362,7 +346,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Twitter">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -370,7 +354,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/01/24/获取location上的参数/" title="分享到 Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/26/js短路运算符/" title="分享到 Google+">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -397,7 +381,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/01/24/获取location上的参数/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://dahil.github.io/2018/02/26/js短路运算符/">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i><span>分享到 Facebook</span>
                 </a>
             </li>
@@ -405,7 +389,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/01/24/获取location上的参数/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://dahil.github.io/2018/02/26/js短路运算符/">
                     <i class="fa fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
                 </a>
             </li>
@@ -413,7 +397,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/01/24/获取location上的参数/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://dahil.github.io/2018/02/26/js短路运算符/">
                     <i class="fa fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
                 </a>
             </li>
